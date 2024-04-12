@@ -1,7 +1,7 @@
 // main.ts
 
-import ClassicEditor from "./ckeditor";
-import html from "./data/demo.html?raw";
+import ClassicEditor from "./src/ckeditor";
+import html from "./src/data/demo.html?raw";
 
 class CommentsIntegration {
   editor: ClassicEditor;
