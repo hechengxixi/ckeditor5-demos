@@ -38,6 +38,8 @@ export const commonConfig = {
       "|",
       "undo",
       "redo",
+      '|',
+        'sourceEditing'
     ],
   },
   lineHeight: {

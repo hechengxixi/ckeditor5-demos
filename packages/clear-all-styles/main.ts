@@ -49,7 +49,7 @@ ClassicEditor
           name: /.*/,
           attributes: true,
           classes: true,
-          styles: false,
+          // styles: false,
         },
       ],
     },

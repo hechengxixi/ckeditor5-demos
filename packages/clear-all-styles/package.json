@@ -39,6 +39,7 @@
     "@ckeditor/ckeditor5-paste-from-office": "40.2.0",
     "@ckeditor/ckeditor5-remove-format": "40.2.0",
     "@ckeditor/ckeditor5-revision-history": "40.2.0",
+    "@ckeditor/ckeditor5-source-editing": "40.2.0",
     "@ckeditor/ckeditor5-table": "40.2.0",
     "@ckeditor/ckeditor5-theme-lark": "40.2.0",
     "@ckeditor/ckeditor5-track-changes": "40.2.0",
