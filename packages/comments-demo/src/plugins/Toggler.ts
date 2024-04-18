@@ -1,5 +1,5 @@
 
-import { Command, Plugin } from '@ckeditor/ckeditor5-core';
+import { Command, Plugin,Editor } from '@ckeditor/ckeditor5-core';
 import { SwitchButtonView } from '@ckeditor/ckeditor5-ui';
 
 
@@ -11,6 +11,7 @@ export class Toggler extends Plugin {
     static get requires() {
         return [ TogglerUI, TogglerCommand ]
     }
+
 
     init() {
         const editor = this.editor;
@@ -50,6 +51,12 @@ class TogglerUI extends Plugin {
 };
 
 class TogglerCommand extends Command {
+    constructor( editor:Editor ) {
+        super( editor );
+
+        // This command will remain enabled even when the editor is read-only.
+        this.affectsData = false;
+    }
     refresh() {
         // Disable the command if the editor is in the read-only mode.
         this.isEnabled = !this.editor.isReadOnly;

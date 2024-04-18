@@ -43,7 +43,7 @@ ClassicEditor
     sidebar: {
       container: document.getElementById("sidebar") as HTMLElement,
     },
-    commentsOnly :true,
+    // commentsOnly :true,
   })
   .then((editor) => {
     editor.editing.view.domConverter.unsafeElements = ["script"];
