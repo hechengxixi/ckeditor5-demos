@@ -44,16 +44,6 @@ DecoupledEditor
     sidebar: {
       container: document.getElementById("sidebar") as HTMLElement,
     },
-    htmlSupport: {
-      allow: [
-        {
-          name: /.*/,
-          attributes: true,
-          classes: true,
-          // styles: false,
-        },
-      ],
-    },
   })
   .then((editor) => {
     const toolbarContainer = document.getElementById('toolbar') as HTMLElement;

@@ -237,7 +237,7 @@ export const commonConfig = {
         name: /.*/,
         attributes: true,
         classes: true,
-        styles: false,
+        styles: true,
       },
     ],
   },
