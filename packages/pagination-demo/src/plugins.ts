@@ -46,7 +46,6 @@ export { TextTransformation } from "@ckeditor/ckeditor5-typing";
 export { GeneralHtmlSupport } from "@ckeditor/ckeditor5-html-support";
 export { RemoveFormat } from "@ckeditor/ckeditor5-remove-format";
 export {
-  SimpleUploadAdapter,
   Base64UploadAdapter,
 } from "@ckeditor/ckeditor5-upload";
 export { Pagination } from "@ckeditor/ckeditor5-pagination";
