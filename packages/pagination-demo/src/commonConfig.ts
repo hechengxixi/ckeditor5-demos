@@ -11,6 +11,7 @@ export const commonConfig = {
       "previousPage",
       "nextPage",
       "pageNavigation",
+      '|', 'exportWord', 'exportPdf',
       "|",
       "comment",
       "|",
@@ -260,9 +261,30 @@ export const commonConfig = {
       left: "12mm",
     },
   },
+  exportWord: {
+      fileName: 'my-file.docx',
+      converterOptions: {
+          format: 'A4', // Default value, you do not need to specify it explicitly for A4.
+          margin_top: '20mm',
+          margin_bottom: '20mm',
+          margin_right: '12mm',
+          margin_left: '12mm'
+      }
+  },
+  exportPdf: {
+    fileName: 'my-file.pdf',
+    converterOptions: {
+        format: 'A4',
+        margin_top: '20mm',
+        margin_bottom: '20mm',
+        margin_right: '12mm',
+        margin_left: '12mm',
+        page_orientation: 'portrait'
+    }
+  },
 
   // This value must be kept in sync with the language defined in webpack.config.js.
   language: "zh-cn",
   licenseKey:
-    "",
+    "UjVTWVFjdTBqNUFETnJURFI0aTRXSkU4VHFlTHVKdVBkYTN0QXNyL1drcEJ1U3VqazIydUI3TWQxc0tpaFE9PS1NakF5TkRBMk1Eaz0=",
 };
