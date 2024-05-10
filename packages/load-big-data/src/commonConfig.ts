@@ -8,10 +8,10 @@ import { Bold, Italic, List, Autoformat } from "./plugins";
 export const commonConfig = {
   toolbar: {
     items: [
-      "previousPage",
-      "nextPage",
-      "pageNavigation",
-      "|",
+      // "previousPage",
+      // "nextPage",
+      // "pageNavigation",
+      // "|",
       "comment",
       "|",
       "heading",

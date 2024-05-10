@@ -49,5 +49,4 @@ export {
   SimpleUploadAdapter,
   Base64UploadAdapter,
 } from "@ckeditor/ckeditor5-upload";
-export { Pagination } from "@ckeditor/ckeditor5-pagination";
 export { Comments } from "@ckeditor/ckeditor5-comments";
