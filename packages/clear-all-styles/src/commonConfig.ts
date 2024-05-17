@@ -261,16 +261,8 @@ export const commonConfig = {
     },
   },
 
-  // SimpleUploadConfig
-  simpleUpload: {
-    // The URL the images are uploaded to.
-    uploadUrl: "/design/doc-write!saveCkeditorPicture",
-
-    // Headers sent along with the XMLHttpRequest to the upload server.
-    headers: {},
-  },
   // This value must be kept in sync with the language defined in webpack.config.js.
   language: "zh-cn",
   licenseKey:
-    "cDJiYWF0YlI1WU5QSHMySGdQcnVINkU5MDdzajZ3RFhkR0xlTU44cGlCNU5sSjM2WHh5bWU4eW5kekU3LU1qQXlOREF5TVRVPQ==",
+    "UjVTWVFjdTBqNUFETnJURFI0aTRXSkU4VHFlTHVKdVBkYTN0QXNyL1drcEJ1U3VqazIydUI3TWQxc0tpaFE9PS1NakF5TkRBMk1Eaz0=",
 };

@@ -43,19 +43,37 @@ ClassicEditor
     sidebar: {
       container: document.getElementById("sidebar") as HTMLElement,
     },
-    htmlSupport: {
-      allow: [
-        {
-          name: /.*/,
-          attributes: true,
-          classes: true,
-          // styles: false,
-        },
-      ],
-    },
   })
   .then((editor) => {
-    editor.editing.view.domConverter.unsafeElements = ["script"];
+
+     /**
+     * method 1
+     * result: text color was not cleared.
+     */
+    // editor.editing.view.document.on('clipboardInput', (evt: any, data: any) => {
+    //   if (data.method === 'paste') {
+    //     const dataTransfer = data.dataTransfer;
+    //     let htmlContent = dataTransfer.getData('text/html');
+    //     const styleReg = /(\s+(style|align)="[^"]*")|(<\/?(u|b|i|strong|o:p)(\s.*?)?>)/gi;
+    //     htmlContent = htmlContent.replace(styleReg, '');
+    //       data.dataTransfer.setData('text/html', htmlContent);
+    //       data.content = editor.data.htmlProcessor.toView(htmlContent);
+    //   }
+    // });
+
+    /**
+     * method 2
+     * result: image src is null
+     */
+    editor.plugins.get('ClipboardPipeline').on('inputTransformation', (evt: any, data: any) => {
+      let pasteHtml = editor.data.htmlProcessor.toData(data.content);
+      const styleReg = /(\s+(style|align)="[^"]*")|(<\/?(u|b|i|strong|o:p)(\s.*?)?>)/gi;
+      pasteHtml = pasteHtml.replace(styleReg, '');
+
+      data.content = editor.data.htmlProcessor.toView(pasteHtml);
+    });
+
+   
     console.timeEnd("init");
     console.log("Editor was initialized", editor);
 
