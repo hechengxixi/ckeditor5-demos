@@ -8,4 +8,4 @@ export default class DecoupledEditor extends DecoupledEditorBase {}
 
 DecoupledEditor.builtinPlugins = Object.values(Plugins);
 
-DecoupledEditor.defaultConfig = commonConfig;
+DecoupledEditor.defaultConfig = commonConfig as any;

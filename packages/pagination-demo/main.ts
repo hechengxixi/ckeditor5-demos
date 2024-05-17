@@ -3,7 +3,7 @@
 import DecoupledEditor from "./src/ckeditor";
 import html from "./src/data/demo.html?raw";
 
-class CommentsIntegration {
+class CommentsIntegration  {
   editor: DecoupledEditor;
   constructor(editor: DecoupledEditor) {
     this.editor = editor;
@@ -40,7 +40,7 @@ console.time("init");
 DecoupledEditor
   // Note that you do not have to specify the plugin and toolbar configuration — using defaults from the build.
   .create(document.querySelector("#app") as HTMLElement, {
-    extraPlugins: [CommentsIntegration],
+    extraPlugins: [CommentsIntegration as any],
     sidebar: {
       container: document.getElementById("sidebar") as HTMLElement,
     },

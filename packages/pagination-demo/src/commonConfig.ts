@@ -269,7 +269,8 @@ export const commonConfig = {
           margin_bottom: '20mm',
           margin_right: '12mm',
           margin_left: '12mm'
-      }
+      },
+      stylesheets: [ './node_modules/@ckeditor/ckeditor5-ui/theme/components/editorui/editorui.css' ]
   },
   exportPdf: {
     fileName: 'my-file.pdf',
@@ -280,7 +281,8 @@ export const commonConfig = {
         margin_right: '12mm',
         margin_left: '12mm',
         page_orientation: 'portrait'
-    }
+    },
+    stylesheets: [ '/style.css' ]
   },
 
   // This value must be kept in sync with the language defined in webpack.config.js.
