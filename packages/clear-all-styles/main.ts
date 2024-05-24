@@ -1,5 +1,6 @@
 // main.ts
 
+import { Element,Schema,Item,DowncastWriter } from "@ckeditor/ckeditor5-engine";
 import ClassicEditor from "./src/ckeditor";
 
 class CommentsIntegration {
@@ -65,12 +66,27 @@ ClassicEditor
      * method 2
      * result: image src is null
      */
-    editor.plugins.get('ClipboardPipeline').on('inputTransformation', (evt: any, data: any) => {
-      let pasteHtml = editor.data.htmlProcessor.toData(data.content);
-      const styleReg = /(\s+(style|align)="[^"]*")|(<\/?(u|b|i|strong|o:p)(\s.*?)?>)/gi;
-      pasteHtml = pasteHtml.replace(styleReg, '');
+    // editor.plugins.get('ClipboardPipeline').on('inputTransformation', (evt: any, data: any) => {
+    //   let pasteHtml = editor.data.htmlProcessor.toData(data.content);
+    //   const styleReg = /(\s+(style|align)="[^"]*")|(<\/?(u|b|i|strong|o:p)(\s.*?)?>)/gi;
+    //   pasteHtml = pasteHtml.replace(styleReg, '');
 
-      data.content = editor.data.htmlProcessor.toView(pasteHtml);
+    //   data.content = editor.data.htmlProcessor.toView(pasteHtml);
+    // });
+
+    editor.plugins.get('ClipboardPipeline').on('inputTransformation', (evt: any, data: any) => {
+      const writer = new DowncastWriter(data.content);
+
+      const contentRange = editor.editing.view.createRangeIn(data.content)
+      Array.from(contentRange).forEach((value)=>{
+        const item = value.item;
+        
+        if(item.is('element')){
+          console.log(item)
+          writer.removeStyle( ['color', 'background','background-color', 'font','font-family'], item );
+        }
+        
+      })
     });
 
    
