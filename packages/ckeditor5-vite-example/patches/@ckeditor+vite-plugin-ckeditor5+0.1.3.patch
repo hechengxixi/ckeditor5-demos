@@ -1,0 +1,23 @@
+diff --git a/node_modules/@ckeditor/vite-plugin-ckeditor5/dist/index.mjs b/node_modules/@ckeditor/vite-plugin-ckeditor5/dist/index.mjs
+index 83db782..3b3bc5a 100644
+--- a/node_modules/@ckeditor/vite-plugin-ckeditor5/dist/index.mjs
++++ b/node_modules/@ckeditor/vite-plugin-ckeditor5/dist/index.mjs
+@@ -6,6 +6,7 @@ import postcss from 'postcss';
+ import postcssNesting from 'postcss-nesting';
+ import postcssMixins from 'postcss-mixins';
+ import postcssImport from 'postcss-import';
++import postcssPresetEnv from 'postcss-preset-env';
+ 
+ /**
+  * @license Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+@@ -42,7 +43,9 @@ const iconsLoader = () => {
+ const readFile = util.promisify(fs.readFile);
+ const postcssOptions = {
+   plugins: [
+-    postcssNesting(),
++    postcssNesting({
++      noIsPseudoSelector: true
++    }),
+     postcssMixins(),
+     postcssImport()
+   ]
