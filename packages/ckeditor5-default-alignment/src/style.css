@@ -1,0 +1,7 @@
+.ck.ck-editor__editable_inline[dir="ltr"] {
+  text-align: left;
+}
+
+.ck.ck-editor__editable_inline[dir="ltr"] table td{
+  text-align: center;
+}
